@@ -28,6 +28,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Build Web App
+        run: |
+          npm run build || true
+          mkdir -p dist www build
+
       - name: Add Android platform
         run: npx cap add android || true
 
